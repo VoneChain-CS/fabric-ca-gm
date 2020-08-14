@@ -295,7 +295,7 @@ func VerifyToken(csp bccsp.BCCSP, token string, method, uri string, body []byte,
 
 	//bccsp.X509PublicKeyImportOpts
 	//Using default hash algo
-	digest, digestError := csp.Hash([]byte(sigString), &bccsp.SHA256Opts{})
+	digest, digestError := csp.Hash([]byte(sigString), &bccsp.GMSM3Opts{})
 	if digestError != nil {
 		return nil, errors.WithMessage(digestError, "Message digest failed")
 	}

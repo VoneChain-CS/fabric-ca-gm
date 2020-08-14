@@ -523,6 +523,7 @@ func getVerifyOptions(ca *CA) (*sm2.VerifyOptions, error) {
 // Return nil if successful; otherwise, return an error.
 func (ca *CA) VerifyCertificate(cert *x509.Certificate) error {
 	sm2Cert := gm.ParseX509Certificate2Sm2(cert)
+	sm2Cert.SignatureAlgorithm = sm2.SM2WithSM3
 	opts, err := getVerifyOptions(ca)
 	if err != nil {
 		return errors.WithMessage(err, "Failed to get verify options")

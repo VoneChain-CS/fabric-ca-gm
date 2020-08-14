@@ -192,56 +192,6 @@ func GetSignerFromCert(cert *x509.Certificate, csp bccsp.BCCSP) (bccsp.Key, cryp
 	return privateKey, signer, nil
 }
 
-// GetSignerFromSM2Cert load private key represented by ski and return bccsp signer that conforms to crypto.Signer
-func GetSignerFromSM2Cert(cert *sm2.Certificate, csp bccsp.BCCSP) (bccsp.Key, crypto.Signer, error) {
-	if csp == nil {
-		return nil, nil, fmt.Errorf("CSP was not initialized")
-	}
-
-	log.Infof("xxxx begin csp.KeyImport,cert.PublicKey is %T   csp:%T", cert.PublicKey, csp)
-	switch cert.PublicKey.(type) {
-	case sm2.PublicKey:
-		log.Infof("xxxxx cert is sm2 puk")
-	default:
-		log.Infof("xxxxx cert is default puk")
-	}
-
-	// sm2cert := gm.ParseX509Certificate2Sm2(cert)
-	// pk := cert.PublicKey
-	// sm2PublickKey := pk.(sm2.PublicKey)
-	// // if !ok {
-	// // 	return nil, nil, errors.New("Parse interface []  to sm2 pk error")
-	// // }
-	// der, err := sm2.MarshalSm2PublicKey(&sm2PublickKey)
-	// if err != nil {
-	// 	return nil, nil, errors.New("MarshalSm2PublicKey error")
-	// }
-
-	// get the public key in the right format
-	certPubK, err := csp.KeyImport(cert, &bccsp.GMSM2PublicKeyImportOpts{Temporary: true})
-	if err != nil {
-		return nil, nil, fmt.Errorf("Failed to import certificate's public key: %s", err.Error())
-	}
-
-	kname := hex.EncodeToString(certPubK.SKI())
-	log.Infof("xxxx begin csp.GetKey kname:%s", kname)
-
-	// Get the key given the SKI value
-	privateKey, err := csp.GetKey(certPubK.SKI())
-	if err != nil {
-		return nil, nil, errors.Errorf("The private key associated with the certificate with SKI '%s' was not found", hex.EncodeToString(certPubK.SKI()))
-	}
-
-	log.Info("xxxx begin cspsigner.New()")
-	// Construct and initialize the signer
-	signer, err := cspsigner.New(csp, privateKey)
-	if err != nil {
-		return nil, nil, errors.WithMessage(err, "Failed to load ski from bccsp")
-	}
-	log.Info("xxxx end GetSignerFromCert successfuul")
-	return privateKey, signer, nil
-}
-
 // GetSignerFromCertFile load skiFile and load private key represented by ski and return bccsp signer that conforms to crypto.Signer
 func GetSignerFromCertFile(certFile string, csp bccsp.BCCSP) (bccsp.Key, crypto.Signer, *x509.Certificate, error) {
 	// Load cert file
