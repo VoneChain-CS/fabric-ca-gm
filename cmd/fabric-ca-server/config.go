@@ -335,14 +335,14 @@ signing:
 csr:
    cn: <<<COMMONNAME>>>
    keyrequest:
-     algo: ecdsa
+     algo: sm2
      size: 256
    names:
       - C: US
         ST: "North Carolina"
         L:
         O: Hyperledger
-        OU: Fabric
+        OU: admin
    hosts:
      - <<<MYHOST>>>
      - localhost

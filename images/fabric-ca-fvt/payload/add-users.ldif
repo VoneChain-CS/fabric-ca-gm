@@ -19,7 +19,7 @@ cn: admin
 sn: Hyperledeger
 givenName: rootadmin
 o: Hyperledger
-ou: Fabric
+ou: admin
 st: North Carolina
 uidNumber: 10002
 gidNumber: 10002

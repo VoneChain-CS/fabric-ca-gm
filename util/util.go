@@ -244,7 +244,8 @@ func GenECDSAToken(csp bccsp.BCCSP, cert []byte, key bccsp.Key, method, uri stri
 }
 
 func genECDSAToken(csp bccsp.BCCSP, key bccsp.Key, b64cert, payload string) (string, error) {
-	digest, digestError := csp.Hash([]byte(payload), &bccsp.SHAOpts{})
+	digest, digestError := csp.Hash([]byte(payload), &bccsp.GMSM3Opts{})
+	fmt.Printf("digest---,%v",digest)
 	if digestError != nil {
 		return "", errors.WithMessage(digestError, fmt.Sprintf("Hash failed on '%s'", payload))
 	}
@@ -263,7 +264,6 @@ func genECDSAToken(csp bccsp.BCCSP, key bccsp.Key, b64cert, payload string) (str
 	return token, nil
 
 }
-
 // VerifyToken verifies token signed by either ECDSA or RSA and
 // returns the associated user ID
 func VerifyToken(csp bccsp.BCCSP, token string, method, uri string, body []byte, compMode1_3 bool) (*x509.Certificate, error) {
@@ -296,6 +296,7 @@ func VerifyToken(csp bccsp.BCCSP, token string, method, uri string, body []byte,
 	//bccsp.X509PublicKeyImportOpts
 	//Using default hash algo
 	digest, digestError := csp.Hash([]byte(sigString), &bccsp.GMSM3Opts{})
+	fmt.Printf("digest---,%v",digest)
 	if digestError != nil {
 		return nil, errors.WithMessage(digestError, "Message digest failed")
 	}

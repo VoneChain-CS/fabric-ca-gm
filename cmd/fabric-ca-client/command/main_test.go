@@ -1107,7 +1107,7 @@ func TestDifferentKeySizeAlgos(t *testing.T) {
       ST: "North Carolina"
       L:
       O: Hyperledger
-      OU: Fabric
+      OU: admin
   keyrequest:
     algo: <<ALGO>>
     size: <<SIZE>>

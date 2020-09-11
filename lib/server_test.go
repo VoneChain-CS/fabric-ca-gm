@@ -1338,7 +1338,7 @@ func TestCSRInputLengthCheck(t *testing.T) {
 				ST: "North Carolina",
 				L:  "Raleigh",
 				O:  "Hyperledger",
-				OU: "Fabric",
+				OU: "admin",
 			},
 			csr.Name{
 				C: "CA",

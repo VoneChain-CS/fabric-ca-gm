@@ -214,12 +214,13 @@ func (c *Client) GenCSR(req *api.CSRInfo, id string) ([]byte, bccsp.Key, error) 
 		return nil, nil, err
 	}
 
+	log.Infof("this is error 1")
 	csrPEM, err := csr.Generate(cspSigner, cr)
 	if err != nil {
 		log.Debugf("failed generating CSR: %s", err)
 		return nil, nil, err
 	}
-
+	log.Infof("this is error 2")
 	return csrPEM, key, nil
 }
 
@@ -297,10 +298,11 @@ func (c *Client) handleX509Enroll(req *api.EnrollmentRequest) (*EnrollmentRespon
 	post.SetBasicAuth(req.Name, req.Secret)
 	var result common.EnrollmentResponseNet
 	err = c.SendReq(post, &result)
+	log.Infof("this is error 3")
 	if err != nil {
 		return nil, err
 	}
-
+	log.Infof("this is error 4")
 	// Create the enrollment response
 	return c.newEnrollmentResponse(&result, req.Name, key)
 }
@@ -716,32 +718,38 @@ func (c *Client) newPost(endpoint string, reqBody []byte) (*http.Request, error)
 // SendReq sends a request to the fabric-ca-server and fills in the result
 func (c *Client) SendReq(req *http.Request, result interface{}) (err error) {
 
+	log.Infof("this is error 5")
 	reqStr := util.HTTPRequestToString(req)
 	log.Debugf("Sending request\n%s", reqStr)
-
+	log.Infof("this is error 6")
 	err = c.Init()
 	if err != nil {
 		return err
 	}
-
+	log.Infof("this is error 7")
 	resp, err := c.httpClient.Do(req)
 	if err != nil {
 		return errors.Wrapf(err, "%s failure of request: %s", req.Method, reqStr)
 	}
 	var respBody []byte
+	log.Infof("resp.Body----%v",resp.Body)
 	if resp.Body != nil {
 		respBody, err = ioutil.ReadAll(resp.Body)
 		defer func() {
 			err := resp.Body.Close()
 			if err != nil {
+				log.Infof("err.Error()%v",err.Error())
 				log.Debugf("Failed to close the response body: %s", err.Error())
 			}
 		}()
 		if err != nil {
+			log.Infof("reqStr----%v",reqStr)
 			return errors.Wrapf(err, "Failed to read response of request: %s", reqStr)
 		}
+		log.Infof("util.HTTPResponseToString(resp)----%v",util.HTTPResponseToString(resp))
 		log.Debugf("Received response\n%s", util.HTTPResponseToString(resp))
 	}
+	log.Infof("this is error 8")
 	var body *cfsslapi.Response
 	if respBody != nil && len(respBody) > 0 {
 		body = new(cfsslapi.Response)
@@ -762,6 +770,7 @@ func (c *Client) SendReq(req *http.Request, result interface{}) (err error) {
 			return errors.Errorf(errorMsg)
 		}
 	}
+	log.Infof("this is error 9")
 	scode := resp.StatusCode
 	if scode >= 400 {
 		return errors.Errorf("Failed with server status code %d for request:\n%s", scode, reqStr)
@@ -776,6 +785,7 @@ func (c *Client) SendReq(req *http.Request, result interface{}) (err error) {
 	if result != nil {
 		return mapstructure.Decode(body.Result, result)
 	}
+	log.Infof("this is error 10")
 	return nil
 }
 

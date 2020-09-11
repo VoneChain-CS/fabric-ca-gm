@@ -16,6 +16,7 @@ limitations under the License.
 package gm
 
 import (
+	"crypto/ecdsa"
 	"crypto/elliptic"
 	"crypto/sha256"
 	"crypto/rand"
@@ -60,9 +61,9 @@ import (
 //调用SM2接口生成SM2证书
 func CreateCertificateToMem(template, parent *sm2.Certificate, key bccsp.Key) (cert []byte, err error) {
 	pk := key.(*gmsm2PrivateKey).privKey
-	template.PublicKey = &pk.PublicKey
-	pub, a := template.PublicKey.(*sm2.PublicKey)
-	template.SubjectKeyId = computeSKI(pk)
+	//template.PublicKey = &pk.PublicKey
+	pub, a := template.PublicKey.(*ecdsa.PublicKey)
+	template.SubjectKeyId = computeSKI(pub)
 	if a {
 		var puk sm2.PublicKey
 
@@ -77,9 +78,9 @@ func CreateCertificateToMem(template, parent *sm2.Certificate, key bccsp.Key) (c
 
 
 // compute Subject Key Identifier //TODO Important
-func computeSKI(privKey *sm2.PrivateKey) []byte {
+func computeSKI(pubKey *ecdsa.PublicKey) []byte {
 	// Marshall the public key
-	raw := elliptic.Marshal(privKey.Curve, privKey.PublicKey.X, privKey.PublicKey.Y)
+	raw := elliptic.Marshal(sm2.P256Sm2(), pubKey.X, pubKey.Y)
 	// Hash it
 	hash := sha256.New()
 	hash.Write(raw)

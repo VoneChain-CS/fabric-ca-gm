@@ -114,7 +114,7 @@ Fabric-CA Client's Configuration File
           ST: North Carolina
           L:
           O: Hyperledger
-          OU: Fabric
+          OU: admin
       hosts:
         - <<<MYHOST>>>
     

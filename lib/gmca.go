@@ -94,7 +94,7 @@ func signCert(req signer.SignRequest, ca *CA) (cert []byte, err error) {
 	//serial := util.GetSerialAsHex(cert.SerialNumber)
 
 	err = ca.certDBAccessor.InsertCertificate(certRecord)
-	if err == nil {
+	if err != nil {
 		log.Info("=====================error InsertCertificate!")
 	}
 
@@ -121,7 +121,7 @@ func createGmSm2Cert(key bccsp.Key, req *csr.CertificateRequest, priv crypto.Sig
 	if err != nil {
 		return nil, err
 	}
-	log.Infof("key is %T   ---%T", sm2Template.PublicKey, sm2Template)
+	log.Infof("key is %T   ---%T", sm2Template.PublicKey, sm2Template)	
 	cert, err = gm.CreateCertificateToMem(sm2Template, sm2Template, key)
 	return
 }

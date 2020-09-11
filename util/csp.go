@@ -194,6 +194,7 @@ func GetSignerFromCert(cert *x509.Certificate, csp bccsp.BCCSP) (bccsp.Key, cryp
 
 // GetSignerFromCertFile load skiFile and load private key represented by ski and return bccsp signer that conforms to crypto.Signer
 func GetSignerFromCertFile(certFile string, csp bccsp.BCCSP) (bccsp.Key, crypto.Signer, *x509.Certificate, error) {
+	log.Infof("certFile-----,%v",certFile)
 	// Load cert file
 	certBytes, err := ioutil.ReadFile(certFile)
 	if err != nil {

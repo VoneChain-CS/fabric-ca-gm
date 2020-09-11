@@ -386,7 +386,7 @@ section that can be configured. The following is a sample CSR.
         ST: "North Carolina"
         L:
         O: Hyperledger
-        OU: Fabric
+        OU: admin
    hosts:
      - host1.example.com
      - localhost
