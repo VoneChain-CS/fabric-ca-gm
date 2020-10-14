@@ -33,13 +33,13 @@ import (
 	"time"
 
 	"github.com/cloudflare/cfssl/csr"
+	"github.com/stretchr/testify/assert"
 	"github.com/tjfoc/fabric-ca-gm/api"
 	. "github.com/tjfoc/fabric-ca-gm/lib"
 	"github.com/tjfoc/fabric-ca-gm/lib/dbutil"
 	libtls "github.com/tjfoc/fabric-ca-gm/lib/tls"
 	"github.com/tjfoc/fabric-ca-gm/util"
 	"github.com/tjfoc/hyperledger-fabric-gm/bccsp/factory"
-	"github.com/stretchr/testify/assert"
 )
 
 const (
@@ -71,7 +71,7 @@ func TestServerInit(t *testing.T) {
 	// Verify that the duration of the newly created certificate is 15 years
 	d, err := util.GetCertificateDurationFromFile(path.Join(rootDir, "ca-cert.pem"))
 	assert.NoError(t, err)
-	assert.True(t, d.Hours() == 131400, fmt.Sprintf("Expecting 131400 but found %f", d.Hours()))
+	assert.True(t, d.Hours() == 175200, fmt.Sprintf("Expecting 175200 but found %f", d.Hours()))
 }
 
 func TestRootServer(t *testing.T) {

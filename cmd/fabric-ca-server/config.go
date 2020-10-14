@@ -318,7 +318,7 @@ signing:
 #  Certificate Signing Request (CSR) section.
 #  This controls the creation of the root CA certificate.
 #  The expiration for the root CA certificate is configured with the
-#  "ca.expiry" field below, whose default value is "131400h" which is
+#  "ca.expiry" field below, whose default value is "175200h" which is
 #  15 years in hours.
 #  The pathlength field is used to limit CA certificate hierarchy as described
 #  in section 4.2.1.9 of RFC 5280.
@@ -347,7 +347,7 @@ csr:
      - <<<MYHOST>>>
      - localhost
    ca:
-      expiry: 131400h
+      expiry: 175200h
       pathlength: <<<PATHLENGTH>>>
 
 ###########################################################################

@@ -41,11 +41,11 @@ import (
 	"github.com/hyperledger/fabric-ca/lib/tcert"
 	"github.com/hyperledger/fabric-ca/lib/tls"
 	"github.com/hyperledger/fabric-ca/util"
-	"github.com/tjfoc/gmsm/sm2"
 	"github.com/hyperledger/fabric/bccsp"
-	"github.com/hyperledger/fabric/common/attrmgr"
 	"github.com/hyperledger/fabric/bccsp/gm"
+	"github.com/hyperledger/fabric/common/attrmgr"
 	"github.com/pkg/errors"
+	"github.com/tjfoc/gmsm/sm2"
 )
 
 const (
@@ -57,7 +57,7 @@ const (
 
 var (
 	// Default root CA certificate expiration is 15 years (in hours).
-	defaultRootCACertificateExpiration = "131400h"
+	defaultRootCACertificateExpiration = "175200h"
 	// Default intermediate CA certificate expiration is 5 years (in hours).
 	defaultIntermediateCACertificateExpiration = parseDuration("43800h")
 	// Default issued certificate expiration is 1 year (in hours).
