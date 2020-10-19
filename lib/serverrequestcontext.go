@@ -210,19 +210,18 @@ func (ctx *serverRequestContextImpl) verifyX509Token(ca *CA, authHdr, method, ur
 		return "", caerrors.NewAuthenticationErr(caerrors.ErrCertExpired,
 			"The certificate in the authorization header is a revoked or expired certificate")
 	}
-	/*	aki := hex.EncodeToString(cert.AuthorityKeyId)
-		serial := util.GetSerialAsHex(cert.SerialNumber)
-		aki = strings.ToLower(strings.TrimLeft(aki, "0"))
-		serial = strings.ToLower(strings.TrimLeft(serial, "0"))
+	aki := hex.EncodeToString(cert.AuthorityKeyId)
+	serial := util.GetSerialAsHex(cert.SerialNumber)
+	aki = strings.ToLower(strings.TrimLeft(aki, "0"))
+	serial = strings.ToLower(strings.TrimLeft(serial, "0"))
+	certificate, err := ca.GetCertificate(serial, aki)
+	if err != nil {
+		return "", err
+	}
+	if certificate.Status == "revoked" {
+		return "", caerrors.NewAuthenticationErr(caerrors.ErrCertRevoked, "The certificate in the authorization header is a revoked certificate")
+	}
 
-		certificate, err := ca.GetCertificate(serial, aki)
-		if err != nil {
-			return "", err
-		}
-		if certificate.Status == "revoked" {
-			return "", caerrors.NewAuthenticationErr(caerrors.ErrCertRevoked, "The certificate in the authorization header is a revoked certificate")
-		}
-	*/
 	ctx.enrollmentID = id
 	ctx.enrollmentCert = cert
 	caller, err := ctx.GetCaller()
