@@ -12,9 +12,9 @@ import (
 	"testing"
 
 	fp256bn "github.com/hyperledger/fabric-amcl/amcl/FP256BN"
-	. "github.com/hyperledger/fabric-ca/lib/server/idemix"
-	"github.com/hyperledger/fabric-ca/lib/server/idemix/mocks"
-	"github.com/hyperledger/fabric/idemix"
+	. "github.com/VoneChain-CS/fabric-ca-gm/lib/server/idemix"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib/server/idemix/mocks"
+	"github.com/VoneChain-CS/fabric-gm/idemix"
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
 )

@@ -24,13 +24,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/hyperledger/fabric-ca/lib/attr"
-	"github.com/hyperledger/fabric-ca/lib/spi"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib/attr"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib/spi"
 
 	"golang.org/x/crypto/ocsp"
 
-	"github.com/hyperledger/fabric-ca/api"
-	"github.com/hyperledger/fabric-ca/util"
+	"github.com/VoneChain-CS/fabric-ca-gm/api"
+	"github.com/VoneChain-CS/fabric-ca-gm/util"
 	"github.com/stretchr/testify/assert"
 )
 

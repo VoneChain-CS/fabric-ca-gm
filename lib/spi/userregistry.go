@@ -11,7 +11,7 @@ SPDX-License-Identifier: Apache-2.0
 package spi
 
 import (
-	"github.com/hyperledger/fabric-ca/api"
+	"github.com/VoneChain-CS/fabric-ca-gm/api"
 	"github.com/jmoiron/sqlx"
 )
 

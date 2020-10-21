@@ -17,11 +17,11 @@ import (
 
 	"github.com/cloudflare/cfssl/csr"
 	"github.com/cloudflare/cfssl/log"
-	"github.com/hyperledger/fabric-ca/api"
-	"github.com/hyperledger/fabric-ca/lib"
-	"github.com/hyperledger/fabric-ca/lib/attr"
-	calog "github.com/hyperledger/fabric-ca/lib/common/log"
-	"github.com/hyperledger/fabric-ca/util"
+	"github.com/VoneChain-CS/fabric-ca-gm/api"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib/attr"
+	calog "github.com/VoneChain-CS/fabric-ca-gm/lib/common/log"
+	"github.com/VoneChain-CS/fabric-ca-gm/util"
 	"github.com/pkg/errors"
 )
 

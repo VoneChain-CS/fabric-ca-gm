@@ -10,9 +10,9 @@ import (
 	"testing"
 
 	"github.com/hyperledger/fabric-amcl/amcl/FP256BN"
-	"github.com/hyperledger/fabric-ca/lib/server/idemix"
-	"github.com/hyperledger/fabric-ca/util"
-	fabidemix "github.com/hyperledger/fabric/idemix"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib/server/idemix"
+	"github.com/VoneChain-CS/fabric-ca-gm/util"
+	fabidemix "github.com/VoneChain-CS/fabric-gm/idemix"
 )
 
 func TestIdemixPanic(t *testing.T) {

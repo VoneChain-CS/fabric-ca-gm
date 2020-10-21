@@ -17,15 +17,15 @@ limitations under the License.
 package gmtls
 
 import (
-	"github.com/hyperledger/fabric-ca/util"
+	"github.com/VoneChain-CS/fabric-ca-gm/util"
 	"io/ioutil"
 	"time"
 
 	"github.com/pkg/errors"
 
 	"github.com/cloudflare/cfssl/log"
-	"github.com/hyperledger/fabric/bccsp"
-	"github.com/hyperledger/fabric/bccsp/factory"
+	"github.com/VoneChain-CS/fabric-gm/bccsp"
+	"github.com/VoneChain-CS/fabric-gm/bccsp/factory"
 	"github.com/tjfoc/gmsm/sm2"
 	gtls "github.com/tjfoc/gmtls"
 )

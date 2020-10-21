@@ -9,7 +9,7 @@ package credential
 import (
 	"net/http"
 
-	"github.com/hyperledger/fabric-ca/api"
+	"github.com/VoneChain-CS/fabric-ca-gm/api"
 )
 
 // Credential represents an credential of an identity

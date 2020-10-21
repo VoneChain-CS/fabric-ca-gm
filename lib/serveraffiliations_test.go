@@ -22,8 +22,8 @@ import (
 
 	"golang.org/x/crypto/ocsp"
 
-	"github.com/hyperledger/fabric-ca/api"
-	"github.com/hyperledger/fabric-ca/util"
+	"github.com/VoneChain-CS/fabric-ca-gm/api"
+	"github.com/VoneChain-CS/fabric-ca-gm/util"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -20,8 +20,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/hyperledger/fabric-ca/api"
-	"github.com/hyperledger/fabric-ca/lib"
+	"github.com/VoneChain-CS/fabric-ca-gm/api"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib"
 )
 
 // testClient represents an application using the fabric-ca client

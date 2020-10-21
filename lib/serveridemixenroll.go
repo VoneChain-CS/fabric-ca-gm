@@ -8,9 +8,9 @@ package lib
 
 import (
 	"github.com/cloudflare/cfssl/log"
-	"github.com/hyperledger/fabric-ca/lib/common"
-	"github.com/hyperledger/fabric-ca/lib/server/idemix"
-	"github.com/hyperledger/fabric-ca/lib/spi"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib/common"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib/server/idemix"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib/spi"
 )
 
 func newIdemixEnrollEndpoint(s *Server) *serverEndpoint {

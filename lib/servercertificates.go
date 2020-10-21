@@ -12,9 +12,9 @@ import (
 	"os"
 
 	"github.com/cloudflare/cfssl/log"
-	"github.com/hyperledger/fabric-ca/lib/caerrors"
-	"github.com/hyperledger/fabric-ca/lib/server/certificaterequest"
-	"github.com/hyperledger/fabric-ca/util"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib/caerrors"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib/server/certificaterequest"
+	"github.com/VoneChain-CS/fabric-ca-gm/util"
 	"github.com/pkg/errors"
 )
 

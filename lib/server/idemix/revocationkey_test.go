@@ -14,10 +14,10 @@ import (
 	"path/filepath"
 	"testing"
 
-	. "github.com/hyperledger/fabric-ca/lib/server/idemix"
-	"github.com/hyperledger/fabric-ca/lib/server/idemix/mocks"
-	"github.com/hyperledger/fabric-ca/util"
-	"github.com/hyperledger/fabric/idemix"
+	. "github.com/VoneChain-CS/fabric-ca-gm/lib/server/idemix"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib/server/idemix/mocks"
+	"github.com/VoneChain-CS/fabric-ca-gm/util"
+	"github.com/VoneChain-CS/fabric-gm/idemix"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -3,7 +3,7 @@ package local
 
 import (
 	"fmt"
-	"github.com/hyperledger/fabric/bccsp/gm"
+	"github.com/VoneChain-CS/fabric-gm/bccsp/gm"
 	"bytes"
 	"crypto"
 	"crypto/rand"

@@ -15,8 +15,8 @@ import (
 
 	"github.com/cloudflare/cfssl/log"
 	"github.com/go-sql-driver/mysql"
-	"github.com/hyperledger/fabric-ca/lib/tls"
-	"github.com/hyperledger/fabric/bccsp"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib/tls"
+	"github.com/VoneChain-CS/fabric-gm/bccsp"
 	"github.com/jmoiron/sqlx"
 	"github.com/pkg/errors"
 )

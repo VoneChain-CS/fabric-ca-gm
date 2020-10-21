@@ -10,7 +10,7 @@ import (
 	"strings"
 
 	"github.com/cloudflare/cfssl/log"
-	"github.com/hyperledger/fabric-ca/api"
+	"github.com/VoneChain-CS/fabric-ca-gm/api"
 	"github.com/pkg/errors"
 )
 

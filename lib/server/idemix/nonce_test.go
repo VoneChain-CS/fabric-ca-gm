@@ -11,11 +11,11 @@ import (
 	"testing"
 	"time"
 
-	dmocks "github.com/hyperledger/fabric-ca/lib/dbutil/mocks"
-	. "github.com/hyperledger/fabric-ca/lib/server/idemix"
-	"github.com/hyperledger/fabric-ca/lib/server/idemix/mocks"
-	"github.com/hyperledger/fabric-ca/util"
-	"github.com/hyperledger/fabric/idemix"
+	dmocks "github.com/VoneChain-CS/fabric-ca-gm/lib/dbutil/mocks"
+	. "github.com/VoneChain-CS/fabric-ca-gm/lib/server/idemix"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib/server/idemix/mocks"
+	"github.com/VoneChain-CS/fabric-ca-gm/util"
+	"github.com/VoneChain-CS/fabric-gm/idemix"
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
 )

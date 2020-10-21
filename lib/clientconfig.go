@@ -22,10 +22,10 @@ import (
 	"path"
 
 	"github.com/cloudflare/cfssl/log"
-	"github.com/hyperledger/fabric-ca/api"
-	"github.com/hyperledger/fabric-ca/lib/tls"
-	"github.com/hyperledger/fabric-ca/util"
-	"github.com/hyperledger/fabric/bccsp/factory"
+	"github.com/VoneChain-CS/fabric-ca-gm/api"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib/tls"
+	"github.com/VoneChain-CS/fabric-ca-gm/util"
+	"github.com/VoneChain-CS/fabric-gm/bccsp/factory"
 	"github.com/pkg/errors"
 )
 

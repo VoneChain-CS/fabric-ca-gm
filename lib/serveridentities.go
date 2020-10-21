@@ -14,12 +14,12 @@ import (
 	"strconv"
 
 	"github.com/cloudflare/cfssl/log"
-	"github.com/hyperledger/fabric-ca/api"
-	"github.com/hyperledger/fabric-ca/lib/attr"
-	"github.com/hyperledger/fabric-ca/lib/caerrors"
-	"github.com/hyperledger/fabric-ca/lib/dbutil"
-	"github.com/hyperledger/fabric-ca/lib/spi"
-	"github.com/hyperledger/fabric-ca/util"
+	"github.com/VoneChain-CS/fabric-ca-gm/api"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib/attr"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib/caerrors"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib/dbutil"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib/spi"
+	"github.com/VoneChain-CS/fabric-ca-gm/util"
 	"github.com/pkg/errors"
 )
 

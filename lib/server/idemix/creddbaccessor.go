@@ -12,7 +12,7 @@ import (
 	"time"
 
 	"github.com/cloudflare/cfssl/log"
-	"github.com/hyperledger/fabric-ca/lib/dbutil"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib/dbutil"
 	"github.com/kisielk/sqlstruct"
 	"github.com/pkg/errors"
 )

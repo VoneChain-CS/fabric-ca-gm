@@ -12,9 +12,9 @@ import (
 
 	"github.com/cloudflare/cfssl/log"
 	fp256bn "github.com/hyperledger/fabric-amcl/amcl/FP256BN"
-	"github.com/hyperledger/fabric-ca/lib/dbutil"
-	"github.com/hyperledger/fabric-ca/util"
-	"github.com/hyperledger/fabric/idemix"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib/dbutil"
+	"github.com/VoneChain-CS/fabric-ca-gm/util"
+	"github.com/VoneChain-CS/fabric-gm/idemix"
 	"github.com/pkg/errors"
 )
 

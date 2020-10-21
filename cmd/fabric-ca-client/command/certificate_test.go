@@ -10,9 +10,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/hyperledger/fabric-ca/cmd/fabric-ca-client/command/mocks"
-	"github.com/hyperledger/fabric-ca/lib"
-	"github.com/hyperledger/fabric-ca/util"
+	"github.com/VoneChain-CS/fabric-ca-gm/cmd/fabric-ca-client/command/mocks"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib"
+	"github.com/VoneChain-CS/fabric-ca-gm/util"
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"

@@ -21,9 +21,9 @@ import (
 
 	"github.com/cloudflare/cfssl/log"
 	"github.com/grantae/certinfo"
-	"github.com/hyperledger/fabric-ca/api"
-	"github.com/hyperledger/fabric-ca/lib/spi"
-	"github.com/hyperledger/fabric-ca/util"
+	"github.com/VoneChain-CS/fabric-ca-gm/api"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib/spi"
+	"github.com/VoneChain-CS/fabric-ca-gm/util"
 	"github.com/pkg/errors"
 	"github.com/spf13/viper"
 	"github.com/tjfoc/gmsm/sm2"

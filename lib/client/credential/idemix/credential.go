@@ -14,11 +14,11 @@ import (
 	"github.com/cloudflare/cfssl/log"
 	"github.com/golang/protobuf/proto"
 	fp256bn "github.com/hyperledger/fabric-amcl/amcl/FP256BN"
-	"github.com/hyperledger/fabric-ca/api"
-	"github.com/hyperledger/fabric-ca/lib/common"
-	"github.com/hyperledger/fabric-ca/util"
-	"github.com/hyperledger/fabric/bccsp"
-	idemix "github.com/hyperledger/fabric/idemix"
+	"github.com/VoneChain-CS/fabric-ca-gm/api"
+	"github.com/VoneChain-CS/fabric-ca-gm/lib/common"
+	"github.com/VoneChain-CS/fabric-ca-gm/util"
+	"github.com/VoneChain-CS/fabric-gm/bccsp"
+	idemix "github.com/VoneChain-CS/fabric-gm/idemix"
 	"github.com/pkg/errors"
 )
 
